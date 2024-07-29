@@ -1,0 +1,1 @@
+az vm list-sizes --location westus -o table --query "[?contains(name, 'B')]"
