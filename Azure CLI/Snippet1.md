@@ -1,6 +1,11 @@
 #Snippets
+## Code for querying output table for ALL vm sizes in westus region by VMs skus named with 'B' -- the sku/names are case sensitive.
 
-## 1 snippet
+```
+az vm list-sizes --location westus -o table --query "[?contains(name, 'B')]"
+```
+
+## Output table for above code
 
 ```
 MaxDataDiskCount    MemoryInMB    Name                NumberOfCores    OsDiskSizeInMB    ResourceDiskSizeInMB
@@ -53,8 +58,4 @@ MaxDataDiskCount    MemoryInMB    Name                NumberOfCores    OsDiskSiz
 32                  65536         Standard_B16ps_v2   16               1047552           0
 ```
 
-## snippet
 
-```
-az vm list-sizes --location westus -o table --query "[?contains(name, 'B')]"
-```
